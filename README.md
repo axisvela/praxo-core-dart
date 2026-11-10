@@ -6,17 +6,16 @@ human-in-the-loop approval, checkpoints, events, and tool calling.
 
 - Package: `praxo_core` (`0.1.1`)
 - Registry: pub.dev
+- Install: `dart pub add praxo_core`
 - Documentation: https://axisvela.github.io/praxo-core/languages/dart/
+- Mirror repository: https://github.com/axisvela/praxo-core-dart
 - Canonical source: https://github.com/axisvela/praxo-core/tree/main/language/dart
 - Release index: https://axisvela.github.io/praxo-core/languages/registry-status/
 
-This repository is a discovery mirror of the canonical Dart source. The
-monorepo remains the source of truth and the release workflow source. Shared
-conformance vectors are included under `spec/`.
-
-## Install or build
-
-Install with `dart pub add praxo_core`.
+This repository is a discovery mirror of the canonical Dart source.
+The monorepo remains the source of truth and the release workflow source. Shared
+conformance vectors are included under `spec/`, so the implementation can be
+built and tested here.
 
 ## Verify
 
