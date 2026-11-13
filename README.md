@@ -4,9 +4,9 @@ Dedicated repository for the Dart implementation of PRAXO-CORE: an
 embeddable, MIT-licensed agent execution kernel with policy controls,
 human-in-the-loop approval, checkpoints, events, and tool calling.
 
-- Package: `praxo_core` (`0.2.0`)
+- Package: `praxo_core` (`0.4.0`)
 - Registry: pub.dev
-- Install: `dart pub add praxo_core:^0.2.0`
+- Install: `dart pub add praxo_core:^0.4.0`
 - Documentation: https://axisvela.github.io/praxo-core/languages/dart/
 - Mirror repository: https://github.com/axisvela/praxo-core-dart
 - Canonical source: https://github.com/axisvela/praxo-core/tree/main/language/dart
