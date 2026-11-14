@@ -8,6 +8,7 @@ human-in-the-loop approval, checkpoints, events, and tool calling.
 - Registry: pub.dev
 - Install: `dart pub add praxo_core:^0.4.0`
 - Documentation: https://axisvela.github.io/praxo-core/languages/dart/
+- Examples: https://github.com/axisvela/praxo-core-dart/tree/main/language/dart/examples
 - Mirror repository: https://github.com/axisvela/praxo-core-dart
 - Canonical source: https://github.com/axisvela/praxo-core/tree/main/language/dart
 - Release index: https://axisvela.github.io/praxo-core/languages/registry-status/
