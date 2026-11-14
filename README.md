@@ -1,31 +1,115 @@
 # PRAXO-CORE for Dart
 
-Dedicated repository for the Dart implementation of PRAXO-CORE: an
-embeddable, MIT-licensed agent execution kernel with policy controls,
-human-in-the-loop approval, checkpoints, events, and tool calling.
+PRAXO-CORE is an embeddable, MIT-licensed agent framework. This package is its native Dart Core: an agent loop with tool registration and dispatch, policy hooks, typed events, memory, checkpoints, context budgets, middleware, OTel and Harmovela sinks, MCP, retriever and synchronous delegation seams, JSON Schema validation, and plugin manifest parsing. It runs in-process and does not require a hosted service.
 
-- Package: `praxo_core` (`0.4.0`)
-- Registry: pub.dev
-- Install: `dart pub add praxo_core:^0.4.0`
-- Documentation: https://axisvela.github.io/praxo-core/languages/dart/
-- Examples: https://github.com/axisvela/praxo-core-dart/tree/main/language/dart/examples
-- Mirror repository: https://github.com/axisvela/praxo-core-dart
-- Canonical source: https://github.com/axisvela/praxo-core/tree/main/language/dart
-- Release index: https://axisvela.github.io/praxo-core/languages/registry-status/
+## At a glance
 
-This repository is a discovery mirror of the canonical Dart source.
-The monorepo remains the source of truth and the release workflow source. Shared
-conformance vectors are included under `spec/`, so the implementation can be
-built and tested here.
+| Field | Value |
+| --- | --- |
+| Package | `praxo_core` |
+| Registry | [pub.dev](https://pub.dev/packages/praxo_core/versions/0.4.0) |
+| Install | `dart pub add praxo_core:^0.4.0` |
+| Source version | `0.4.0` |
+| Published version | `0.4.0` |
+| Source tag | `dart/v0.4.0` |
+| Tier | Core |
+| Contract | `SPEC_VERSION` `0.2.0` |
+| Documentation | https://axisvela.github.io/praxo-core/languages/dart/ |
+| License | MIT |
+
+## Highlights
+
+- OpenAI-compatible model: native
+- Anthropic model: native
+- Gemini model: native
+- MCP client: native
+- Harmovela sink: native
+- OpenTelemetry sink: native (transport seam)
+- Subagent delegation: native (synchronous seam)
+- Retriever: native
+
+## Quick start
+
+Install the published package:
+
+```bash
+dart pub add praxo_core:^0.4.0
+```
+
+```dart
+import 'package:praxo_core/praxo_core.dart';
+
+void main() {
+  final agent = Agent(AgentOptions(StaticModel('hello')));
+  final result = agent.run(const Session(id: 'demo'), 'hello');
+  print(result.output);
+}
+```
+
+See the [full Dart README](language/dart/README.md) for complete installation, build, and verification commands.
+
+## What's included
+
+| Capability | Status | Detail |
+| --- | --- | --- |
+| OpenAI-compatible model | native | `OpenAiCompatibleModel` with sync and async transport paths |
+| Anthropic model | native | `AnthropicModel` with sync and async transport paths |
+| Gemini model | native | `GeminiModel` with sync and async transport paths |
+| MCP client | native | `McpClient`; stdio, plus `McpStreamableHttpTransport` for Streamable HTTP 2025-03-26 |
+| Harmovela sink | native | `HarmovelaSink` |
+| OpenTelemetry sink | native (transport seam) | `OtelSink`; caller supplies `OtelTransport` |
+| Subagent delegation | native (synchronous seam) | `SubagentManager.run`; no asynchronous manager |
+| Retriever | native | `Document`, `FuncRetriever`, `retrieveDocuments` |
+
+## Examples
+
+Runnable examples live under [`language/dart/examples`](language/dart/examples).
+
+| Example | What it shows |
+| --- | --- |
+| [checkpoint](language/dart/examples/checkpoint) | This example uses the Dart Core checkpoint allowlist for a registered payload round trip. |
+| [event-sink](language/dart/examples/event-sink) | This example uses Dart Core sink composition to fan out events and filter the tool-only stream. |
+| [identity-policy](language/dart/examples/identity-policy) | This example binds a trusted principal to policy decisions and rejects missing, role-mismatched, and tenant-mismatched actions. |
+| [mcp](language/dart/examples/mcp) | This example uses a caller-owned in-process transport with the Dart MCP client. |
+| [provider-fallback](language/dart/examples/provider-fallback) | This example calls a fallback only after the primary fails and preserves the primary failure when both fail. |
+| [retry](language/dart/examples/retry) | This example retries a transient failure with a bounded attempt count and keeps the exhausted failure state. |
+| [service](language/dart/examples/service) | This example defines a transport-neutral request handler with health, principal, and run cases. |
+| [streaming](language/dart/examples/streaming) | This example accumulates streamed chunks and checks that they reconstruct the final output. |
+| [structured-output](language/dart/examples/structured-output) | This example validates a final JSON answer against a schema and rejects invalid output. |
 
 ## Verify
 
-Build and test instructions are in `language/dart/README.md`. The
-monorepo CI runs the language's conformance, API snapshot, and native tests.
+Run the checks from `language/dart`:
 
-PRAXO-CORE is not a hosted model, workflow engine, identity provider, or safety
-controller. Do not infer exactly-once execution, complete sandbox isolation,
-production security certification, live-provider behavior, or physical safety
-from this package.
+```bash
+dart run conformance/run.dart
+python api-snapshot.py --check
+dart run test/run.dart
+```
+
+This mirror contains the language source and the shared `spec/` vectors, so the implementation can be built and tested here. See [`language/dart/README.md`](language/dart/README.md) for the exact commands. The monorepo CI runs conformance, API snapshot, and native tests for this implementation.
+
+## Community
+
+- X: <https://x.com/axisvela>
+- Weibo: <https://weibo.com/u/1936025761>
+
+## Repository layout
+
+- `language/dart/` — implementation source, tests, API snapshot, and examples
+- `spec/` — shared contract, vectors, and parity inventories
+- `LICENSE` — MIT license
+
+## Canonical source
+
+- Canonical source: https://github.com/axisvela/praxo-core/tree/main/language/dart
+- Registry introduction: `language/dart/REGISTRY.md`
+- Machine-readable entry: `language/dart/llms.txt` and `language/dart/llms.md`
+- Mirror repository: https://github.com/axisvela/praxo-core-dart
+- Release index: https://axisvela.github.io/praxo-core/languages/registry-status/
+
+This repository is a discovery mirror of the canonical Dart source. The monorepo remains the source of truth and the release workflow source.
+
+PRAXO-CORE is not a hosted model, workflow engine, identity provider, or safety controller. Do not infer exactly-once execution, complete sandbox isolation, production security certification, live-provider behavior, or physical safety from this package.
 
 MIT licensed.
