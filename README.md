@@ -9,9 +9,9 @@ PRAXO-CORE is an embeddable, MIT-licensed agent framework. This package is its n
 | Package | `praxo_core` |
 | Registry | [pub.dev](https://pub.dev/packages/praxo_core/versions/0.4.0) |
 | Install | `dart pub add praxo_core:^0.4.0` |
-| Source version | `0.4.0` |
+| Source version | `0.5.0` |
 | Published version | `0.4.0` |
-| Source tag | `dart/v0.4.0` |
+| Source tag | `dart/v0.5.0` |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
 | Documentation | https://axisvela.github.io/praxo-core/languages/dart/ |
@@ -68,8 +68,10 @@ Runnable examples live under [`language/dart/examples`](language/dart/examples).
 | Example | What it shows |
 | --- | --- |
 | [checkpoint](language/dart/examples/checkpoint) | This example uses the Dart Core checkpoint allowlist for a registered payload round trip. |
+| [consumer](language/dart/examples/consumer) | This example uses the source Dart Core with a deterministic model, one registered `record` tool, an explicit tool scope, and a policy that permits only the `public` target. It d... |
 | [event-sink](language/dart/examples/event-sink) | This example uses Dart Core sink composition to fan out events and filter the tool-only stream. |
 | [identity-policy](language/dart/examples/identity-policy) | This example binds a trusted principal to policy decisions and rejects missing, role-mismatched, and tenant-mismatched actions. |
+| [live-model](language/dart/examples/live-model) | This example connects the Dart Core to an OpenAI-compatible endpoint through `OpenAICompatibleModel` and registers one low-risk `get_time` tool with a small JSON Schema. The pol... |
 | [mcp](language/dart/examples/mcp) | This example uses a caller-owned in-process transport with the Dart MCP client. |
 | [provider-fallback](language/dart/examples/provider-fallback) | This example calls a fallback only after the primary fails and preserves the primary failure when both fail. |
 | [retry](language/dart/examples/retry) | This example retries a transient failure with a bounded attempt count and keeps the exhausted failure state. |
