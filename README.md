@@ -70,6 +70,7 @@ Runnable examples live under [`language/dart/examples`](language/dart/examples).
 | [checkpoint](language/dart/examples/checkpoint) | This example uses the Dart Core checkpoint allowlist for a registered payload round trip. |
 | [consumer](language/dart/examples/consumer) | This example uses the source Dart Core with a deterministic model, one registered `record` tool, an explicit tool scope, and a policy that permits only the `public` target. It d... |
 | [event-sink](language/dart/examples/event-sink) | This example uses Dart Core sink composition to fan out events and filter the tool-only stream. |
+| [hitl](language/dart/examples/hitl) | This example demonstrates a write tool that requires human approval: |
 | [identity-policy](language/dart/examples/identity-policy) | This example binds a trusted principal to policy decisions and rejects missing, role-mismatched, and tenant-mismatched actions. |
 | [live-model](language/dart/examples/live-model) | This example connects the Dart Core to an OpenAI-compatible endpoint through `OpenAICompatibleModel` and registers one low-risk `get_time` tool with a small JSON Schema. The pol... |
 | [mcp](language/dart/examples/mcp) | This example uses a caller-owned in-process transport with the Dart MCP client. |
