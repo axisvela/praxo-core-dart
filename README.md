@@ -19,14 +19,7 @@ PRAXO-CORE is an embeddable, MIT-licensed agent framework. This package is its n
 
 ## Highlights
 
-- OpenAI-compatible model: native
-- Anthropic model: native
-- Gemini model: native
-- MCP client: native
-- Harmovela sink: native
-- OpenTelemetry sink: native (transport seam)
-- Subagent delegation: native (synchronous seam)
-- Retriever: native
+- Publishing setup: [PUBLISHING.md](PUBLISHING.md)
 
 ## Quick start
 
