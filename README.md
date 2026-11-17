@@ -60,6 +60,7 @@ Runnable examples live under [`language/dart/examples`](language/dart/examples).
 
 | Example | What it shows |
 | --- | --- |
+| [advanced-delegation](language/dart/examples/advanced-delegation) | This example shows an application-level parent/child agent pattern combined with six governance negative checks. |
 | [checkpoint](language/dart/examples/checkpoint) | This example uses the Dart Core checkpoint allowlist for a registered payload round trip. |
 | [consumer](language/dart/examples/consumer) | This example uses the source Dart Core with a deterministic model, one registered `record` tool, an explicit tool scope, and a policy that permits only the `public` target. It d... |
 | [event-sink](language/dart/examples/event-sink) | This example uses Dart Core sink composition to fan out events and filter the tool-only stream. |
@@ -68,6 +69,7 @@ Runnable examples live under [`language/dart/examples`](language/dart/examples).
 | [live-model](language/dart/examples/live-model) | This example connects the Dart Core to an OpenAI-compatible endpoint through `OpenAICompatibleModel` and registers one low-risk `get_time` tool with a small JSON Schema. The pol... |
 | [mcp](language/dart/examples/mcp) | This example uses a caller-owned in-process transport with the Dart MCP client. |
 | [provider-fallback](language/dart/examples/provider-fallback) | This example calls a fallback only after the primary fails and preserves the primary failure when both fail. |
+| [representative-chain](language/dart/examples/representative-chain) | This deterministic example exercises the same application seams as the Go representative chain without a live provider: |
 | [retry](language/dart/examples/retry) | This example retries a transient failure with a bounded attempt count and keeps the exhausted failure state. |
 | [service](language/dart/examples/service) | This example defines a transport-neutral request handler with health, principal, and run cases. |
 | [session-checkpoint](language/dart/examples/session-checkpoint) | This example saves and restores a conversation history across two agent turns. It uses the Core allowlist for payload encoding and a teaching in-memory payload. |
