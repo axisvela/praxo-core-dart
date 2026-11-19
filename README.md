@@ -9,9 +9,9 @@ PRAXO-CORE is an embeddable, MIT-licensed agent framework. This package is its n
 | Package | `praxo_core` |
 | Registry | [pub.dev](https://pub.dev/packages/praxo_core/versions/0.6.2) |
 | Install | `dart pub add praxo_core:^0.6.2` |
-| Source version | `0.6.2` |
+| Source version | `0.7.0` |
 | Published version | `0.6.2` |
-| Source tag | `dart/v0.6.2` |
+| Source tag | `dart/v0.7.0` |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
 | Documentation | https://axisvela.github.io/praxo-core/languages/dart/ |
@@ -45,10 +45,9 @@ See the [full Dart README](language/dart/README.md) for complete installation, b
 
 | Capability | Status | Detail |
 | --- | --- | --- |
-| OpenAI-compatible model | native | `OpenAiCompatibleModel` with sync and async transport paths; SSE streaming reassembly |
-| Anthropic model | native | `AnthropicModel` with sync and async transport paths ; Anthropic SSE streaming |
-| Gemini model | native | `GeminiModel`; Gemini SSE streaming |
-| Process plugin host | native | `PluginProcessHost`; JSON-Lines stdio, token auth, health, timeout, cancel |
+| OpenAI-compatible model | native | `OpenAiCompatibleModel` with sync and async transport paths; `generateStream` reassembles SSE content, tool calls, usage, and finish reason |
+| Anthropic model | native | `AnthropicModel` with sync and async transport paths; `generateStream` reassembles Anthropic SSE |
+| Gemini model | native | `GeminiModel`; `generateStream` reassembles Gemini SSE |
 | MCP client | native | `McpClient`; stdio, plus `McpStreamableHttpTransport` for Streamable HTTP 2025-03-26 |
 | Harmovela sink | native | `HarmovelaSink` |
 | OpenTelemetry sink | native (transport seam) | `OtelSink`; caller supplies `OtelTransport` |
