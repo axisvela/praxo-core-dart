@@ -93,6 +93,8 @@ Scenario-oriented tutorials live under `language/dart/Tutorial`. Planning contex
 | [travel-booking](language/dart/Tutorial/travel-booking) | Fixed trip inventory produces a review-only fare hold. No payment, ticketing or inventory write. |
 | [waste-collection](language/dart/Tutorial/waste-collection) | A bounded first slice of [CT-06](https://axisvela.github.io/praxo-core/getting-started/agent-scenarios/), not a fleet-dispatch system. It reads a fixed collection queue and draf... |
 
+## Reference Applications
+
 No accepted end-to-end reference application is recorded for this language yet. Candidate goals are tracked in the [Reference Application Portfolio](https://axisvela.github.io/praxo-core/project/roadmap/#reference-application-portfolio).
 
 ## Verify
