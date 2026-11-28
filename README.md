@@ -1,6 +1,6 @@
 # PRAXO-CORE for Dart
 
-PRAXO-CORE is an embeddable, MIT-licensed agent framework. This package is its native Dart Core: an agent loop with tool registration and dispatch, policy hooks, typed events, memory, checkpoints, context budgets, middleware, OTel and Harmovela sinks, MCP, retriever and synchronous delegation seams, JSON Schema validation, and plugin manifest parsing. It runs in-process and does not require a hosted service.
+PRAXO-CORE (also written praxocore) is an embeddable, MIT-licensed agent framework. PRAXO-CORE is an embeddable, MIT-licensed agent framework. This package is its native Dart Core: an agent loop with tool registration and dispatch, policy hooks, typed events, memory, checkpoints, context budgets, middleware, OTel and Harmovela sinks, MCP, retriever and synchronous delegation seams, JSON Schema validation, and plugin manifest parsing. It runs in-process and does not require a hosted service.
 
 ## At a glance
 
@@ -63,11 +63,11 @@ Runnable examples live under [`language/dart/examples`](language/dart/examples).
 | --- | --- |
 | [advanced-delegation](language/dart/examples/advanced-delegation) | This example shows an application-level parent/child agent pattern combined with six governance negative checks. |
 | [checkpoint](language/dart/examples/checkpoint) | This example uses the Dart Core checkpoint allowlist for a registered payload round trip. |
-| [consumer](language/dart/examples/consumer) | This example uses the source Dart Core with a deterministic model, one registered `record` tool, an explicit tool scope, and a policy that permits only the `public` target. It d... |
+| [consumer](language/dart/examples/consumer) | This example uses the source Dart Core with a deterministic model, one registered `record` tool, an explicit tool scope, and a policy that permits only the `public` target. It does not use a network or a live model. |
 | [event-sink](language/dart/examples/event-sink) | This example uses Dart Core sink composition to fan out events and filter the tool-only stream. |
 | [hitl](language/dart/examples/hitl) | This example demonstrates a write tool that requires human approval: |
 | [identity-policy](language/dart/examples/identity-policy) | This example binds a trusted principal to policy decisions and rejects missing, role-mismatched, and tenant-mismatched actions. |
-| [live-model](language/dart/examples/live-model) | This example connects the Dart Core to an OpenAI-compatible endpoint through `OpenAICompatibleModel` and registers one low-risk `get_time` tool with a small JSON Schema. The pol... |
+| [live-model](language/dart/examples/live-model) | This example connects the Dart Core to an OpenAI-compatible endpoint through `OpenAICompatibleModel` and registers one low-risk `get_time` tool with a small JSON Schema. The policy allows only `model.generate` and the `get_time` `tool.invoke`; the tool scope is `["get_time"]`. |
 | [mcp](language/dart/examples/mcp) | This example uses a caller-owned in-process transport with the Dart MCP client. |
 | [provider-fallback](language/dart/examples/provider-fallback) | This example calls a fallback only after the primary fails and preserves the primary failure when both fail. |
 | [representative-chain](language/dart/examples/representative-chain) | This deterministic example exercises the same application seams as the Go representative chain without a live provider: |
@@ -110,6 +110,11 @@ dart run test/run.dart
 
 This mirror contains the language source and the shared `spec/` vectors, so the implementation can be built and tested here. See [`language/dart/README.md`](language/dart/README.md) for the exact commands. The monorepo CI runs conformance, API snapshot, and native tests for this implementation.
 
+## Boundaries
+
+Reference application source is not end-to-end portfolio acceptance; follow each README's scope and evidence.
+PRAXO-CORE is not a hosted model, workflow engine, identity provider, or safety controller. Do not infer exactly-once execution, complete sandbox isolation, production security certification, live-provider behavior, or physical safety from this package.
+
 ## Community
 
 - X: <https://x.com/axisvela>
@@ -139,6 +144,5 @@ This mirror contains the language source and the shared `spec/` vectors, so the 
 
 This repository is a discovery mirror of the canonical Dart source. The monorepo remains the source of truth and the release workflow source. The mirror's `main` branch tracks current source, not a release snapshot. Source tags refer to the canonical monorepo and are not necessarily present in this mirror; syncing the branch does not publish mirror tags or registry packages.
 
-PRAXO-CORE is not a hosted model, workflow engine, identity provider, or safety controller. Do not infer exactly-once execution, complete sandbox isolation, production security certification, live-provider behavior, or physical safety from this package.
 
 MIT licensed.
